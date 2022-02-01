@@ -1,0 +1,13 @@
+.root {
+  display: grid;
+  //if we want our layout to adapt the screen size, use vh.
+  //if the content is going to get increased be it caused by responsiveness or adding more content use min-content/auto
+  grid-template-rows: repeat(3, min-content);
+  grid-template-columns:
+    [full-start] 1fr [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 9rem) [col-end]
+    )
+    [center-end] 1fr [full-end];
+  justify-content: center;
+}

@@ -1,0 +1,36 @@
+.dropdownMenu {
+  background: white;
+  color: black;
+  width: 200px;
+  position: absolute;
+  top: 12px;
+  list-style: none;
+  text-align: start;
+  z-index: 10;
+  border-radius: 0px 0px 5px 5px;
+  padding: 1rem;
+  li {
+    cursor: pointer;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+    &:hover {
+      transition: 0.3s;
+      transform: scale(1.1);
+    }
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+@media (max-width: 900px) {
+  .dropdownMenu {
+    display: block;
+    position: relative;
+  }
+}

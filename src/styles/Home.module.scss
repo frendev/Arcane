@@ -1,0 +1,58 @@
+@import "./style";
+
+.container {
+  // display: grid;
+  // //if we want our layout to adapt the screen size, use vh.
+  // //if the content is going to get increased be it caused by responsiveness or adding more content use min-content/auto
+  // grid-template-rows: repeat(3, min-content);
+  // grid-template-columns:
+  //   [full-start] 1fr [center-start] repeat(
+  //     8,
+  //     [col-start] minmax(min-content, 9rem) [col-end]
+  //   )
+  //   [center-end] 1fr [full-end];
+  // justify-content: center;
+
+  // .heroContainer {
+  //   grid-column: full-start/full-end;
+  //   color: $font-primary;
+  // }
+
+  // .servicesContainer {
+  //   grid-column: center-start/center-end;
+  //   padding: 2rem;
+  //   margin: 2rem 0;
+  //   display: grid;
+  //   grid-template-columns: 1fr;
+  //   grid-gap: 20px;
+  //   background-color: whitesmoke;
+  //   .services__heading {
+  //     text-transform: uppercase;
+  //     font-weight: 400;
+  //     font-size: 2rem;
+  //     justify-self: center;
+  //     border-bottom: 2px blueviolet solid;
+  //   }
+
+  //   .services__section {
+  //     display: grid;
+  //     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  //     grid-gap: 30px;
+
+  //     .service {
+  //       display: grid;
+  //       justify-items: center;
+  //       align-items: start;
+  //       &__icon {
+  //         width: 250px;
+  //         height: 200px;
+  //       }
+  //       &__heading {
+  //         text-align: center;
+  //         font-size: 1.5rem;
+  //         color: black;
+  //       }
+  //     }
+  //   }
+  // }
+}

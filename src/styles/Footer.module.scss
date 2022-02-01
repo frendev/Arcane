@@ -1,0 +1,49 @@
+.footer {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 1rem;
+  grid-gap: 2rem;
+
+  &__about {
+    padding: 0rem 2.5rem;
+
+    .heading {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      color: white;
+    }
+    .text {
+      font-size: 1.2rem;
+      color: white;
+    }
+  }
+
+  &__contact {
+    padding: 0rem 2.5rem;
+
+    .heading {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .links {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .icon {
+        vertical-align: bottom;
+        margin-right: 0.5rem;
+      }
+      .link {
+        width: max-content;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+      }
+    }
+  }
+}

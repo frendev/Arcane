@@ -1,0 +1,30 @@
+{
+  "name": "arcane-website",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.11.1",
+    "classnames": "^2.3.1",
+    "contentful": "^9.1.5",
+    "infinite-react-carousel": "^1.2.11",
+    "next": "12.0.4",
+    "pure-react-carousel": "^1.27.8",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.24.0",
+    "react-icons": "^4.3.1",
+    "react-responsive-carousel": "^3.2.22",
+    "react-slick": "^0.28.1",
+    "sass": "^1.43.5",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "eslint": "7",
+    "eslint-config-next": "12.0.4"
+  }
+}

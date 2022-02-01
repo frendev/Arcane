@@ -1,0 +1,43 @@
+.container {
+  display: grid;
+  //if we want our layout to adapt the screen size, use vh.
+  //if the content is going to get increased be it caused by responsiveness or adding more content use min-content/auto
+  grid-template-columns:
+    [full-start] 1fr [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 9rem) [col-end]
+    )
+    [center-end] 1fr [full-end];
+  justify-content: center;
+  .contactForm {
+    grid-column: col-start 1 / col-end 4;
+    display: grid;
+    justify-items: center;
+    padding: 2rem;
+
+    &__heading {
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 1.5rem;
+      justify-self: center;
+      border-bottom: 2px blueviolet solid;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      textarea {
+        resize: none;
+      }
+      button {
+        border: none;
+        background: lightblue;
+      }
+    }
+    form > * {
+      padding: 0.5rem;
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+  }
+}

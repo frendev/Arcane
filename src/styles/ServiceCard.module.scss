@@ -1,0 +1,11 @@
+.service {
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  box-shadow: 0 0 10px #c2bebe;
+  &__heading {
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+  }
+}

@@ -1,0 +1,8 @@
+.heroContainer {
+  grid-column: full-start / full-end;
+
+  .heroItem {
+    background: lightgrey;
+    height: 50vh;
+  }
+}

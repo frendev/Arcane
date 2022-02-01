@@ -1,0 +1,98 @@
+.headerContainer {
+  background-color: #fff;
+  color: #bd09cf;
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  .header {
+    display: flex;
+    justify-content: space-around;
+    &__logo {
+      align-self: center;
+    }
+
+    &__links {
+      display: flex;
+      list-style: none;
+      height: 64px;
+      .link {
+        height: 100%;
+        margin-right: 3vw;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        .iconDown {
+          display: none;
+        }
+        .dropdownMenu {
+          position: absolute;
+          visibility: hidden;
+          opacity: 0;
+        }
+        &:hover {
+          .iconUp {
+            display: none;
+          }
+          .iconDown {
+            display: block;
+          }
+          .dropdownMenu {
+            @keyframes downOut {
+              0% {
+                transform: translateZ(200px) transLateY(40px);
+              }
+              80% {
+                transform: translateZ(-10px) transLateY(0px);
+              }
+              100% {
+                transform: translateZ(0px) transLateY(0px);
+              }
+            }
+            animation: downOut 300ms ease-in-out forwards;
+            transform-origin: top center;
+            visibility: visible;
+            opacity: 1;
+            z-index: 10;
+          }
+        }
+      }
+    }
+  }
+  .mobileNavContainer {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .headerContainer {
+    .header {
+      display: none;
+    }
+    .mobileNavContainer {
+      display: flex;
+      background-color: black;
+      color: white;
+      font-size: 1.2rem;
+      height: 64px;
+      justify-content: space-around;
+      align-items: center;
+      .hamburgerMenuIcon {
+        cursor: pointer;
+      }
+      .navLinks {
+        position: absolute;
+        top: 64px;
+        z-index: 10;
+        display: block;
+        width: 100%;
+        border-top: 1px white solid;
+        background-color: black;
+        padding: 1rem;
+        .link {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+}
