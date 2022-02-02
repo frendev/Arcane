@@ -1,30 +1,20 @@
 .dropdownMenu {
-  background: white;
+  background: rgb(233, 233, 233);
   color: black;
-  width: 200px;
   position: absolute;
-  top: 12px;
+  top: 32px;
   list-style: none;
   text-align: start;
   z-index: 10;
   border-radius: 0px 0px 5px 5px;
-  padding: 1rem;
   li {
+    padding: 1rem;
     cursor: pointer;
-    margin-bottom: 1rem;
-    margin-left: 0.5rem;
     &:hover {
+      background: #700e79;
       transition: 0.3s;
-      transform: scale(1.1);
+      color: rgb(255, 255, 255);
     }
-  }
-
-  &__link {
-    display: block;
-    height: 100%;
-    width: 100%;
-    text-decoration: none;
-    color: #fff;
   }
 }
 

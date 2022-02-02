@@ -1,3 +1,4 @@
+import useSWR from "swr";
 import Link from "next/link";
 import styles from "../styles/Navbar.module.scss";
 import { useState } from "react";
@@ -7,10 +8,14 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import Image from "next/image";
 import logo from "../public/arcane.jpg";
 import classname from "classnames";
+import { createClient } from "contentful";
 
 export default function Navbar() {
+  const fetcher = (url) => fetch(url).then((res) => res.json());
   const [isMobileNavigation, setIsMobileNavigation] = useState(false);
 
+  const { data } = useSWR(`/api/service`, fetcher);
+  console.log(data);
   return (
     <>
       <div className={styles.headerContainer}>
@@ -20,12 +25,14 @@ export default function Navbar() {
           <div>
             <div className={styles.header__links}>
               <div className={styles.link}>
-                <Link href="/">Home</Link>
+                <Link className={styles.linkRedirect} href="/">
+                  Home
+                </Link>
               </div>
               <div className={styles.link}>
                 <Link href="http://localhost:3000/#services">Services</Link>
-                <FaCaretDown className={styles.iconUp} />
-                <FaCaretUp className={styles.iconDown} />
+                <FaCaretDown size={25} className={styles.iconUp} />
+                <FaCaretUp size={25} className={styles.iconDown} />
 
                 <div className={styles.dropdownMenu}>
                   <Dropdown />

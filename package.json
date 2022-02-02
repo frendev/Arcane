@@ -21,7 +21,8 @@
     "react-responsive-carousel": "^3.2.22",
     "react-slick": "^0.28.1",
     "sass": "^1.43.5",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "swr": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "7",

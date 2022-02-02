@@ -42,7 +42,7 @@ export default function Home({ services }) {
               <ServiceCard />
             </div>
           </div> */}
-          <Service />
+          <Service services={services} />
         </Container>
 
         {/* <div className={styles.services__section}>
