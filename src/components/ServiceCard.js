@@ -11,14 +11,14 @@ const ServiceCard = ({ service }) => {
     <>
       <div className={styles.service}>
         <Image
-          src={"https:" + imageUrl.fields.file.url}
+          src={`https:${imageUrl.fields.file.url}`}
           className={styles.services__icon}
           alt="logo"
           width={250}
           height={250}
         />
         <h4 className={styles.service__heading}>
-          <Link href={`/services/" + ${slug}`}>{title}</Link>
+          <Link href={`/services/${slug}`}>{title}</Link>
         </h4>
       </div>
     </>

@@ -14,7 +14,7 @@ export default function Navbar() {
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const [isMobileNavigation, setIsMobileNavigation] = useState(false);
 
-  const { data } = useSWR(`/api/service`, fetcher);
+  const { data } = useSWR(`/api/servicesDropdown`, fetcher);
   console.log(data);
   return (
     <>

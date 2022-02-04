@@ -1,12 +1,15 @@
 .headerContainer {
   background-color: #fff;
-  color: #90099c;
+  color: #75057f;
   font-size: 1.2rem;
   font-weight: 500;
 
   .header {
     display: flex;
     justify-content: space-around;
+    height: 64px;
+    align-items: center;
+
     &__logo {
       align-self: center;
     }
@@ -14,7 +17,6 @@
     &__links {
       display: flex;
       list-style: none;
-      height: 64px;
 
       .link {
         height: 100%;
@@ -71,10 +73,11 @@
       display: none;
     }
     .mobileNavContainer {
-      display: flex;
-      background-color: black;
-      color: white;
+      background-color: #fff;
+      color: #75057f;
       font-size: 1.2rem;
+      font-weight: 500;
+      display: flex;
       height: 64px;
       justify-content: space-around;
       align-items: center;
@@ -89,6 +92,7 @@
         width: 100%;
         border-top: 1px white solid;
         background-color: black;
+
         padding: 1rem;
         .link {
           padding: 1rem;

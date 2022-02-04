@@ -4,6 +4,7 @@ import styles from "../styles/Hero.module.scss";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import logo from "../public/vercel.svg";
+import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 
 import { Carousel } from "react-responsive-carousel";
 
