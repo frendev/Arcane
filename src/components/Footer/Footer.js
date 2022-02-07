@@ -1,5 +1,4 @@
-import styles from "../styles/Footer.module.scss";
-
+import styles from "./Footer.module.scss";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsLinkedin, BsTelephone } from "react-icons/bs";
 

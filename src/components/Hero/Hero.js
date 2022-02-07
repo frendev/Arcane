@@ -1,14 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import styles from "../styles/Hero.module.scss";
-
+import styles from "./Hero.module.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import logo from "../public/vercel.svg";
-import { FaCaretDown, FaCaretUp } from "react-icons/fa";
+import logo from "../../public/vercel.svg";
 
 import { Carousel } from "react-responsive-carousel";
 
-const Hero = () => {
+export default function Hero() {
   return (
     <Carousel className={styles.heroContainer} showThumbs={false}>
       <div className={styles.heroItem}>
@@ -23,6 +21,4 @@ const Hero = () => {
       </div>
     </Carousel>
   );
-};
-
-export default Hero;
+}

@@ -3,11 +3,9 @@ import styles from "../styles/Home.module.scss";
 import Image from "next/image";
 import logo from "../public/vercel.svg";
 import { createClient } from "contentful";
-import Hero from "../components/Hero";
+import Hero from "../components/Hero/Hero";
 import Container from "../components/Container/Container";
-
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import ServiceCard from "../components/ServiceCard";
 import Service from "../components/Service/Service";
 
 export async function getStaticProps() {
@@ -36,42 +34,8 @@ export default function Home({ services }) {
         </Head>
         <Container>
           <Hero />
-          {/* <div id="services" className={styles.servicesContainer}>
-            <h1 className={styles.services__heading}>Services</h1>
-            <div className={styles.services__section}>
-              <ServiceCard />
-            </div>
-          </div> */}
           <Service services={services} />
         </Container>
-
-        {/* <div className={styles.services__section}>
-            <div className={styles.service}>
-              <Image src={logo} className={styles.services__icon} alt="logo" />
-
-              <h4 className={styles.service__heading}>Urban Developement</h4>
-            </div>
-            <div className={styles.service}>
-              <Image src={logo} className={styles.services__icon} alt="logo" />
-
-              <h4 className={styles.service__heading}>Bridges</h4>
-            </div>
-            <div className={styles.service}>
-              <Image src={logo} className={styles.services__icon} alt="logo" />
-
-              <h4 className={styles.service__heading}>Railways & Metros</h4>
-            </div>
-            <div className={styles.service}>
-              <Image src={logo} className={styles.services__icon} alt="logo" />
-
-              <h4 className={styles.service__heading}>Environment & Social</h4>
-            </div>
-            <div className={styles.service}>
-              <Image src={logo} className={styles.services__icon} alt="logo" />
-
-              <h4 className={styles.service__heading}>Apartments</h4>
-            </div> */}
-        {/* </div> */}
       </div>
     </>
   );

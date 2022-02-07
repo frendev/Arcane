@@ -64,8 +64,10 @@ const serviceDetails = ({ service }) => {
           </option>
         </select>
       </div>
+
       <div className={styles.servicesHeading}>Services - {title}</div>
       <div className={styles.servicesTabsContainer}>
+        <div>Our Services</div>
         <ul className={styles.serviceTabs}>
           <li className={styles.serviceTab}>
             <span>Environment & Urban Development</span>

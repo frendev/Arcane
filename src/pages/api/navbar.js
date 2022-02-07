@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
   const data = await client.getEntries({
-    content_type: "servicesDropdown",
+    content_type: "navbar",
   });
 
   console.log(data);

@@ -5,19 +5,19 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
-  color: #bd09cf;
+  color: #75057f;
   .services__heading {
     text-transform: uppercase;
     font-weight: 400;
     font-size: 2rem;
     justify-self: center;
-    border-bottom: 5px #bd09cf solid;
+    border-bottom: 5px #75057f solid;
   }
 
   .services__section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 30px;
+    grid-gap: 2rem;
 
     .service {
       display: grid;

@@ -1,12 +1,11 @@
 import React from "react";
-import styles from "../styles/ServiceCard.module.scss";
+import styles from "./ServiceCard.module.scss";
 import Image from "next/image";
-import logo from "../public/vercel.svg";
 import Link from "next/link";
 
-const ServiceCard = ({ service }) => {
-  const { title, slug, imageUrl, description } = service.fields;
-  console.log(imageUrl);
+export default function ServiceCard({ service }) {
+  const { title, slug, imageUrl } = service.fields;
+
   return (
     <>
       <div className={styles.service}>
@@ -23,6 +22,6 @@ const ServiceCard = ({ service }) => {
       </div>
     </>
   );
-};
+}
 
-export default ServiceCard;
+ServiceCard;

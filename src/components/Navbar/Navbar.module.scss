@@ -12,11 +12,13 @@
 
     &__logo {
       align-self: center;
+      cursor: pointer;
     }
 
     &__links {
       display: flex;
       list-style: none;
+      height: 64px;
 
       .link {
         height: 100%;

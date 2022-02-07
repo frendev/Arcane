@@ -1,9 +1,7 @@
-import ServiceCard from "../ServiceCard";
+import ServiceCard from "../ServiceCard/ServiceCard";
 import styles from "./Service.module.scss";
 
-const Service = ({ services }) => {
-  console.log(services);
-
+export default function Service({ services }) {
   return (
     <div id="services" className={styles.servicesContainer}>
       <h1 className={styles.services__heading}>Services</h1>
@@ -16,6 +14,4 @@ const Service = ({ services }) => {
       </div>
     </div>
   );
-};
-
-export default Service;
+}
