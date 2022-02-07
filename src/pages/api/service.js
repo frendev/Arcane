@@ -10,7 +10,6 @@ export default async function handler(req, res) {
     content_type: "service",
   });
 
-  console.log(data);
   res.json(data);
   // res.status(200).json({ name: 'John Doe' })
 }

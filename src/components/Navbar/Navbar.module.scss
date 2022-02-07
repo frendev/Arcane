@@ -9,6 +9,8 @@
     justify-content: space-around;
     height: 64px;
     align-items: center;
+    box-shadow: 0px 0px 5px black;
+    z-index: 5;
 
     &__logo {
       align-self: center;
@@ -75,6 +77,7 @@
       display: none;
     }
     .mobileNavContainer {
+      box-shadow: 0px 0px 5px black;
       background-color: #fff;
       color: #75057f;
       font-size: 1.2rem;
@@ -87,15 +90,20 @@
         cursor: pointer;
       }
       .navLinks {
+        color: white;
         position: absolute;
         top: 64px;
         z-index: 10;
         display: block;
         width: 100%;
-        border-top: 1px white solid;
-        background-color: black;
+        background: #75057f;
 
-        padding: 1rem;
+        .subMenuLink {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: #75057f;
+        }
         .link {
           padding: 1rem;
         }
