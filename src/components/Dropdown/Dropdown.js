@@ -12,15 +12,14 @@ export default function Dropdown({ subMenu }) {
       >
         {subMenu.map((subMenuItem, index) => {
           return (
-            <li key={index}>
+            <div className={styles.dropdownMenu__link}>
               <Link
-                className={styles.dropdownMenu__link}
                 href={`/services/${subMenuItem.href}`}
                 onClick={() => setClick(false)}
               >
                 {subMenuItem.title}
               </Link>
-            </li>
+            </div>
           );
         })}
       </ul>

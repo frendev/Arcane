@@ -11,6 +11,7 @@
     "@contentful/rich-text-react-renderer": "^15.11.1",
     "classnames": "^2.3.1",
     "contentful": "^9.1.5",
+    "framer-motion": "^6.2.4",
     "infinite-react-carousel": "^1.2.11",
     "next": "12.0.4",
     "pure-react-carousel": "^1.27.8",

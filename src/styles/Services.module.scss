@@ -1,16 +1,13 @@
 .servicesContainer {
-  display: grid;
-  grid-template-columns:
-    [full-start] 1fr [center-start] repeat(
-      8,
-      [col-start] minmax(min-content, 9rem) [col-end]
-    )
-    [center-end] 1fr [full-end];
-
-  grid-template-rows: auto auto;
-
   padding: 2rem;
+  grid-column: center-start/center-end;
+  display: grid;
 
+  .servicesTabsHeading {
+    grid-column: col-start 1 / col-start 2;
+    font-size: 1.5rem;
+    border-bottom: 2px #75057f solid;
+  }
   .servicesHeading {
     grid-column: col-start 3 / col-end 8;
     font-weight: 400;
@@ -24,11 +21,10 @@
 
   .servicesTabsContainer {
     grid-column: col-start 1 / col-end 2;
-    grid-template-rows: auto;
 
     .serviceTabs {
       list-style: none;
-      margin-right: 1rem;
+      margin: 1rem 1rem 0rem 0rem;
 
       .serviceTab {
         background-color: #eee;
@@ -37,9 +33,13 @@
         border-left: 5px solid #75057f;
         margin-bottom: 5px;
       }
+
+      .activeTab {
+        background: #75057f;
+        color: white;
+      }
     }
   }
-
   .servicesDetails {
     grid-column: col-start 3 / col-end 8;
     font-size: 1.2rem;
@@ -48,6 +48,7 @@
 
 @media (max-width: 900px) {
   .servicesContainer {
+    padding: 2rem;
     .servicesHeading {
       grid-column: col-start 1 / col-end 8;
       font-weight: 500;

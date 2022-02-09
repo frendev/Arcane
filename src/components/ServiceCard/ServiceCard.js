@@ -16,9 +16,9 @@ export default function ServiceCard({ service }) {
           width={250}
           height={250}
         />
-        <h4 className={styles.service__heading}>
+        <div className={styles.service__heading}>
           <Link href={`/services/${slug}`}>{title}</Link>
-        </h4>
+        </div>
       </div>
     </>
   );
