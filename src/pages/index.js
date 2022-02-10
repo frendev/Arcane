@@ -24,6 +24,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ services }) {
+  console.log(services);
   return (
     <>
       <div className={styles.container}>

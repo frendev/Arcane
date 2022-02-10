@@ -8,6 +8,7 @@ import Container from "../../components/Container/Container";
 import router, { useRouter } from "next/router";
 import { GiConsoleController } from "react-icons/gi";
 import classnames from "classnames";
+import useSWR from "swr";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -50,6 +51,10 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const serviceDetails = ({ service, titleAndSlugList }) => {
+  const fetcher = (url) => fetch(url).then((res) => res.json());
+  const { data } = useSWR(`/api/servicesSubMenu`, fetcher);
+  console.log("hi this is menu", data);
+
   const router = useRouter();
   const path = router.asPath.split("/services/");
 
@@ -80,40 +85,32 @@ const serviceDetails = ({ service, titleAndSlugList }) => {
               </option>
             </select>
           </div>
-          <div className={styles.servicesTabsHeading}>Our Services</div>
-          <div className={styles.servicesHeading}>Services - {title}</div>
           <div className={styles.servicesTabsContainer}>
+            <div className={styles.servicesTabsHeading}>Our Services</div>
             <ul className={styles.serviceTabs}>
-              {titleAndSlugList &&
-                titleAndSlugList?.map((titleAndSlug) => {
-                  console.log(titleAndSlug);
+              {data &&
+                data.items?.map((titleAndSlug, index) => {
                   return (
                     <li
+                      key={index}
                       className={classnames(styles.serviceTab, {
-                        [styles.activeTab]: path[1] === slug,
+                        [styles.activeTab]:
+                          path[1] === titleAndSlug.fields.slug,
                       })}
                     >
-                      <span>{titleAndSlug.title}</span>
+                      <span>{titleAndSlug.fields.title}</span>
                     </li>
                   );
                 })}
-              {/* <li
-                className={classnames(styles.serviceTab, {
-                  [styles.activeTab]: path[1] !== slug,
-                })}
-              >
-                <span>Environment & Urban Development</span>
-              </li>
-              <li className={styles.serviceTab}>
-                <span> Highways & Roads</span>
-              </li>
-              <li className={styles.serviceTab}>
-                <span> Railways & Metros</span>
-              </li> */}
             </ul>
           </div>
-          <div className={styles.servicesDetails}>
-            {documentToReactComponents(description)}
+          <div className={styles.servicesDetailsContainer}>
+            <div className={styles.servicesDetailsHeading}>
+              Services - {title}
+            </div>
+            <div className={styles.servicesDetailsDescription}>
+              {documentToReactComponents(description)}
+            </div>
           </div>
         </div>
       </Container>

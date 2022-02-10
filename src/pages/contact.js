@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Contact.module.scss";
 import { useForm } from "react-hook-form";
+import Container from "../components/Container/Container";
 
 export default function Contact() {
   const {
@@ -14,17 +15,17 @@ export default function Contact() {
   console.log(errors);
   const onSubmit = (data) => console.log(data);
 
+  const name = "firstName";
+  const options = { required: true, maxLength: 20 };
+  const placeHolder = " Name";
   return (
-    <div className={styles.container}>
+    <Container>
       <div className={styles.contactForm}>
         <div className={styles.contactForm__heading}>Contact Us</div>
         <form onSubmit={handleSubmit(onSubmit)}>
+          <input placeholder="First Name" {...register(name, options)} />
           <input
-            placeholder="First Name"
-            {...register("firstName", { required: true, maxLength: 20 })}
-          />
-          <input
-            placeholder="Last Name"
+            placeholder={placeHolder}
             {...register("lastName", { required: true, maxLength: 20 })}
           />
           <input
@@ -54,6 +55,6 @@ export default function Contact() {
           <button type="submit">Submit </button>
         </form>
       </div>
-    </div>
+    </Container>
   );
 }

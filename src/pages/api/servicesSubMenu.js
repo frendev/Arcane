@@ -1,3 +1,4 @@
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { createClient } from "contentful";
 
 export default async function handler(req, res) {
@@ -6,10 +7,9 @@ export default async function handler(req, res) {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
   const data = await client.getEntries({
-    content_type: "navbar",
-    order: "sys.updatedAt",
+    content_type: "servicesSubMenu",
   });
-
+  console.log("hi", data);
   res.json(data);
   // res.status(200).json({ name: 'John Doe' })
 }

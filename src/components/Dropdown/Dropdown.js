@@ -11,13 +11,14 @@ export default function Dropdown({ subMenu }) {
         className={click ? styles.dropdownMenu__clicked : styles.dropdownMenu}
       >
         {subMenu.map((subMenuItem, index) => {
+          console.log(subMenuItem);
           return (
             <div className={styles.dropdownMenu__link}>
               <Link
-                href={`/services/${subMenuItem.href}`}
+                href={`/services/${subMenuItem.fields.slug}`}
                 onClick={() => setClick(false)}
               >
-                {subMenuItem.title}
+                {subMenuItem.fields.title}
               </Link>
             </div>
           );

@@ -3,24 +3,12 @@
   grid-column: center-start/center-end;
   display: grid;
 
-  .servicesTabsHeading {
-    grid-column: col-start 1 / col-start 2;
-    font-size: 1.5rem;
-    border-bottom: 2px #75057f solid;
-  }
-  .servicesHeading {
-    grid-column: col-start 3 / col-end 8;
-    font-weight: 400;
-    font-size: 1.5rem;
-    border-bottom: 2px #75057f solid;
-  }
-
-  .servicesMenuContainer {
-    display: none;
-  }
-
   .servicesTabsContainer {
-    grid-column: col-start 1 / col-end 2;
+    grid-column: col-start 1 / col-start 2;
+    .servicesTabsHeading {
+      font-size: 1.5rem;
+      border-bottom: 2px #75057f solid;
+    }
 
     .serviceTabs {
       list-style: none;
@@ -40,9 +28,20 @@
       }
     }
   }
-  .servicesDetails {
+
+  .servicesMenuContainer {
+    display: none;
+  }
+
+  .servicesDetailsContainer {
     grid-column: col-start 3 / col-end 8;
     font-size: 1.2rem;
+    margin-left: 2rem;
+    .servicesDetailsHeading {
+      font-weight: 400;
+      font-size: 1.5rem;
+      border-bottom: 2px #75057f solid;
+    }
   }
 }
 

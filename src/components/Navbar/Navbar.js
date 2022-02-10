@@ -7,13 +7,12 @@ import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import Image from "next/image";
-import logo from "../../public/arcaneLogo.png";
+import logo from "../../public/ArcaneLogoAndText.svg";
 import classname from "classnames";
 import { createClient } from "contentful";
 import { motion, AnimatePresence, useViewportScroll } from "framer-motion";
 
 export default function Navbar() {
-  const fetcher = (url) => fetch(url).then((res) => res.json());
   const [isMobileNavigation, setIsMobileNavigation] = useState(false);
   const [selectedSubMenu, setSelectedSubMenu] = useState(null);
 
@@ -50,7 +49,10 @@ export default function Navbar() {
     }
   };
 
+  const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data } = useSWR(`/api/navbar`, fetcher);
+
+  console.log(data);
 
   return (
     <>
@@ -72,28 +74,30 @@ export default function Navbar() {
           <div>
             <div className={styles.header__links}>
               {data &&
-                data.items[0].fields.navbar.navbar.map((navItem) => {
-                  if (!navItem.subMenu) {
+                data.items.map?.((navItem) => {
+                  if (!navItem.fields.subMenu) {
                     return (
                       <div className={styles.link}>
                         <Link
                           className={styles.linkRedirect}
-                          href={`${navItem.href}`}
+                          href={`/${navItem.fields.slug}`}
                         >
-                          {navItem.title}
+                          {navItem.fields.title}
                         </Link>
                       </div>
                     );
                   } else {
                     return (
                       <div className={styles.link}>
-                        <Link href={`http://localhost:3000/#${navItem.href}`}>
-                          {navItem.title}
+                        <Link
+                          href={`http://localhost:3000/${navItem.fields.slug}`}
+                        >
+                          {navItem.fields.title}
                         </Link>
                         <FaCaretDown size={25} className={styles.iconUp} />
                         <FaCaretUp size={25} className={styles.iconDown} />
                         <div className={styles.dropdownMenu}>
-                          <Dropdown subMenu={navItem.subMenu} />
+                          <Dropdown subMenu={navItem.fields.subMenu} />
                         </div>
                       </div>
                     );
@@ -119,15 +123,15 @@ export default function Navbar() {
           <div className={styles.navLinks}>
             {isMobileNavigation &&
               data &&
-              data.items[0].fields.navbar.navbar.map((navItem, index) => {
-                if (!navItem.subMenu) {
+              data.items.map?.((navItem, index) => {
+                if (!navItem.fields.subMenu) {
                   return (
                     <div className={styles.link}>
                       <Link
                         className={styles.linkRedirect}
-                        href={`${navItem.href}`}
+                        href={`${navItem.fields.slug}`}
                       >
-                        {navItem.title}
+                        {navItem.fields.title}
                       </Link>
                     </div>
                   );
@@ -137,8 +141,10 @@ export default function Navbar() {
                     <>
                       <div className={styles.subMenuLink}>
                         <div className={styles.link}>
-                          <Link href={`http://localhost:3000/#${navItem.href}`}>
-                            {navItem.title}
+                          <Link
+                            href={`http://localhost:3000/#${navItem.fields.slug}`}
+                          >
+                            {navItem.fields.title}
                           </Link>
                         </div>
                         {selectedSubMenu !== null && (
@@ -175,7 +181,7 @@ export default function Navbar() {
                             }}
                             className={styles.dropdownMenu}
                           >
-                            <Dropdown subMenu={navItem.subMenu} />
+                            <Dropdown subMenu={navItem.fields.subMenu} />
                           </motion.div>
                         )}
                       </AnimatePresence>
