@@ -3,11 +3,23 @@
   justify-items: center;
   align-items: start;
   height: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  color: #75075f;
+  background-color: white;
+
+  &__image {
+    border-radius: 10px;
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 
   &__heading {
     text-align: center;
     font-size: 1.5rem;
-    color: black;
     font-weight: 400;
   }
 }

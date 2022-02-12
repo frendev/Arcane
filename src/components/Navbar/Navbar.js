@@ -78,10 +78,7 @@ export default function Navbar() {
                   if (!navItem.fields.subMenu) {
                     return (
                       <div className={styles.link}>
-                        <Link
-                          className={styles.linkRedirect}
-                          href={`/${navItem.fields.slug}`}
-                        >
+                        <Link href={`/${navItem.fields.slug}`}>
                           {navItem.fields.title}
                         </Link>
                       </div>

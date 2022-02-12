@@ -13,7 +13,7 @@ export default function Dropdown({ subMenu }) {
         {subMenu.map((subMenuItem, index) => {
           console.log(subMenuItem);
           return (
-            <div className={styles.dropdownMenu__link}>
+            <div key={index} className={styles.dropdownMenu__link}>
               <Link
                 href={`/services/${subMenuItem.fields.slug}`}
                 onClick={() => setClick(false)}

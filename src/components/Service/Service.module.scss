@@ -1,15 +1,15 @@
 .servicesContainer {
   grid-column: center-start/center-end;
   padding: 2rem;
-  margin: 2rem 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
   color: #75057f;
+  justify-items: center;
 
   .services__heading {
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 2rem;
     justify-self: center;
     border-bottom: 5px #75057f solid;
@@ -19,19 +19,16 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 2rem;
+    justify-self: normal;
     justify-items: center;
     .service {
       display: grid;
       justify-items: center;
       align-items: start;
-      &__icon {
-        width: 250px;
-        height: 200px;
-      }
+
       &__heading {
         text-align: center;
         font-size: 1.5rem;
-        color: black;
       }
     }
   }

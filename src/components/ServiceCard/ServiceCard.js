@@ -9,13 +9,15 @@ export default function ServiceCard({ service }) {
   return (
     <>
       <div className={styles.service}>
-        <Image
-          src={`https:${imageUrl.fields.file.url}`}
-          className={styles.services__icon}
-          alt="logo"
-          width={250}
-          height={250}
-        />
+        <div className={styles.service__image}>
+          <Image
+            src={`https:${imageUrl.fields.file.url}`}
+            className={styles.services__icon}
+            alt="logo"
+            width={250}
+            height={250}
+          />
+        </div>
         <div className={styles.service__heading}>
           <Link href={`/services/${slug}`}>{title}</Link>
         </div>

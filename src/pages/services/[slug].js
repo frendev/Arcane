@@ -50,7 +50,7 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-const serviceDetails = ({ service, titleAndSlugList }) => {
+const ServiceDetails = ({ service, titleAndSlugList }) => {
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data } = useSWR(`/api/servicesSubMenu`, fetcher);
   console.log("hi this is menu", data);
@@ -118,4 +118,4 @@ const serviceDetails = ({ service, titleAndSlugList }) => {
   );
 };
 
-export default serviceDetails;
+export default ServiceDetails;
