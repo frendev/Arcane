@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import styles from "./Hero.module.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import logo from "../../public/arcaneLogo.png";
 import { Carousel } from "react-responsive-carousel";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 
