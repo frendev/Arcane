@@ -67,7 +67,7 @@ export default function Navbar() {
         <div className={styles.header}>
           <div className={styles.header__logo}>
             <Link href="/">
-              <Image src={logo} alt="logo" width={250} height={45} />
+              <Image src={logo} alt="logo" width={250} height={60} />
             </Link>
           </div>
           {/* #this is for desktop navbar */}
