@@ -7,7 +7,7 @@ import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import Image from "next/image";
-import logo from "../../public/ArcaneLogoAndText.svg";
+import logo from "../../public/ArcaneLogoAndText.jpg";
 import classname from "classnames";
 import { createClient } from "contentful";
 import { motion, AnimatePresence, useViewportScroll } from "framer-motion";
