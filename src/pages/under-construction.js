@@ -39,6 +39,7 @@ const UnderConstruction = () => {
 					We apologize for the inconvenience, but our site is
 					currently undergoing maintenance. Please check back later.
 				</p>
+				<p> For Enquiries, reach out to us at admin@arcaneprojects.in and +91 92722222729</p>
 			</div>
 		</div>
 	)
